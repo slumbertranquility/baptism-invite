@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baptism Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* --- THEME SETTINGS --- */
+        :root {
+            --gold: #D4AF37;
+            --cream: #FAF9F6;
+            --text: #4A4A4A;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--cream);
+            color: var(--text);
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem; /* Large elegant text */
+            color: var(--gold);
+            margin: 10px 0;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #2c2c2c;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        /* --- SECTIONS --- */
+        .container {
+            max-width: 600px; /* Looks good on PC and Phone */
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            min-height: 100vh;
+            border-left: 10px solid var(--gold);
+            border-right: 10px solid var(--gold);
+        }
+
+        /* --- HERO HEADER --- */
+        .header-section {
+            padding: 60px 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sub-text {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* --- BIBLE VERSE --- */
+        .verse-box {
+            background-color: #fcfcfc;
+            padding: 30px;
+            margin: 20px 0;
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+        }
+
+        /* --- DETAILS GRID --- */
+        .details-box {
+            background: #fdfdfd;
+            border: 1px dashed #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* --- GODPARENTS --- */
+        .godparents-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .godparents-list li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #eee;
+            font-size: 1.05rem;
+        }
+
+        /* --- BUTTON --- */
+        .rsvp-btn {
+            background-color: var(--gold);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header-section">
+            <p class="sub-text">Join us for the Christening of</p>
+            <h1>Baby Name Here</h1>
+            <p class="sub-text">Sunday • November 20, 2025</p>
+        </div>
+
+        <div class="verse-box">
+            "Every good and perfect gift is from above, coming down from the Father of the heavenly lights."
+            <br><small>- James 1:17</small>
+        </div>
+
+        <h2>The Celebration</h2>
+        
+        <div class="details-box">
+            <span class="icon">⛪</span>
+            <strong>THE CEREMONY</strong><br>
+            10:00 AM<br>
+            San Agustin Church<br>
+            <small>General Luna St, Manila</small>
+        </div>
+
+        <div class="details-box">
+            <span class="icon">🍽️</span>
+            <strong>THE RECEPTION</strong><br>
+            12:00 PM<br>
+            Barbara's Heritage Restaurant<br>
+            <small>Intramuros, Manila</small>
+        </div>
+
+        <h2>Godparents</h2>
+        <p>Our guiding lights</p>
+        
+        <ul class="godparents-list">
+            <li>Mr. Juan Dela Cruz</li>
+            <li>Ms. Maria Clara</li>
+            <li>Mr. Jose Rizal</li>
+            <li>Ms. Gabriela Silang</li>
+            <li>(Add more names here)</li>
+        </ul>
+
+        <h2>RSVP</h2>
+        <p>Please confirm before October 20th.</p>
+        
+        <a href="https://m.me/your.username" class="rsvp-btn">Confirm Attendance</a>
+
+    </div>
+
+</body>
+</html>
