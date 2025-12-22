@@ -2,71 +2,122 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width,initial-scale=1,
-               maximum-scale=1,user-scalable=no">
-<title>Grace Marie Tumulak Invitation Envelope</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Grace Marie Invitation</title>
 <style>
-  body,html{
-    margin:0;padding:0;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#fffaf4;
-    font-family:'Poppins',sans-serif;
-    overflow:hidden;
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fcf6f8; /* Soft Pink Background */
+    font-family: 'Georgia', serif;
+    overflow: hidden;
   }
 
-  .container{
-    text-align:center;
+  .container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-  .envelope{
-    width:340px;height:240px;
-    background:url('envelope.jpg') center/cover no-repeat;
-    border-radius:10px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.15);
-    transform-origin:center bottom;
-    transition:transform 1s ease;
-  }
-  .lift{
-    transform:translateY(-30px) rotateX(30deg) scale(1.05);
-    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+  /* The Envelope Container */
+  .envelope-wrapper {
+    position: relative;
+    width: 300px;
+    height: 220px;
+    cursor: pointer;
+    transition: transform 0.8s ease-in-out;
   }
 
-  .tap-note{
-    margin-top:1.2rem;
-    color:#7a5a64;
-    font-size:.95rem;
-    letter-spacing:.4px;
-    animation:blink 1.8s ease-in-out infinite;
+  /* The Envelope Image */
+  .envelope-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the whole envelope is visible */
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+    z-index: 2;
+    position: relative;
   }
 
-  @keyframes blink{
-    0%,100%{opacity:1;}
-    50%{opacity:.5;}
+  /* The Letter inside (Hidden initially) */
+  .letter-preview {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 270px;
+    height: 180px;
+    background: white;
+    z-index: 1;
+    transition: transform 1s ease;
+    border-radius: 5px;
+  }
+
+  /* Animation for opening */
+  .open-anim .envelope-wrapper {
+    transform: translateY(150px);
+    opacity: 0;
+  }
+  
+  .open-anim .letter-preview {
+    transform: translateY(-200px) scale(1.5);
+    opacity: 0;
+  }
+
+  /* The Text Below */
+  .tap-note {
+    margin-top: 2rem;
+    color: #b08d99;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { opacity: 0.5; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.5; transform: scale(0.95); }
   }
 
 </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="envelope" id="envelope"></div>
-  <div class="tap-note">🌸 Tap to open invitation 🌸</div>
+<div class="container" id="main-container">
+  
+  <div class="envelope-wrapper" id="envelope">
+     <img src="envelope.jpg" alt="Envelope" class="envelope-img">
+     <div class="letter-preview"></div>
+  </div>
+
+  <div class="tap-note">Tap to Open</div>
 </div>
 
 <script>
-const env = document.getElementById('envelope');
+  const env = document.getElementById('envelope');
+  const container = document.getElementById('main-container');
 
-env.addEventListener('click', ()=>{
-  env.classList.add('lift');
-  // after 1 second animation, redirect
-  setTimeout(()=>{
-    window.location.href = 'open.html';
-  },1000);
-});
+  env.addEventListener('click', () => {
+    // Add the animation class
+    container.classList.add('open-anim');
+    
+    // Wait 0.8 seconds then go to the next page
+    setTimeout(() => {
+      window.location.href = 'open.html';
+    }, 800);
+  });
 </script>
+
 </body>
 </html>
+
+
