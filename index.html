@@ -5,87 +5,67 @@
 <meta name="viewport"
       content="width=device-width,initial-scale=1,
                maximum-scale=1,user-scalable=no">
-<title>Tumulak Invitation – Envelope</title>
+<title>Grace Marie Tumulak Invitation Envelope</title>
 <style>
   body,html{
-    margin:0;padding:0;height:100%;
-    display:flex;justify-content:center;
-    align-items:center;background:#fffaf4;
-    overflow:hidden;
+    margin:0;padding:0;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#fffaf4;
     font-family:'Poppins',sans-serif;
+    overflow:hidden;
   }
+
+  .container{
+    text-align:center;
+  }
+
   .envelope{
-    position:relative;
-    width:320px;
-    height:220px;
+    width:340px;height:240px;
     background:url('envelope.jpg') center/cover no-repeat;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    border-radius:8px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+    transform-origin:center bottom;
     transition:transform 1s ease;
   }
-  .envelope.opened{
-    transform:rotateX(180deg);
+  .lift{
+    transform:translateY(-30px) rotateX(30deg) scale(1.05);
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
   }
-  .wax-seal{
-    position:absolute;
-    width:70px;height:70px;
-    background:#eb8da1;
-    border-radius:50%;
-    top:50%;left:50%;
-    transform:translate(-50%,-50%);
-    display:flex;justify-content:center;
-    align-items:center;
-    color:#fff;font-family:'Playfair Display',serif;
-    font-size:2rem;
-    box-shadow:inset 0 0 5px rgba(0,0,0,0.2);
-  }
-  .message{
-    position:absolute;
-    bottom:5%;
-    width:100%;
-    text-align:center;
-    font-size:.9rem;
+
+  .tap-note{
+    margin-top:1.2rem;
     color:#7a5a64;
+    font-size:.95rem;
+    letter-spacing:.4px;
+    animation:blink 1.8s ease-in-out infinite;
   }
-  .next{
-    position:absolute;
-    display:none;
-    bottom:10%;
-    left:50%;
-    transform:translateX(-50%);
-    background:#eb8da1;
-    color:#fff;
-    border:none;
-    border-radius:25px;
-    padding:.7rem 1.4rem;
-    font-weight:bold;
-    letter-spacing:.5px;
-    cursor:pointer;
+
+  @keyframes blink{
+    0%,100%{opacity:1;}
+    50%{opacity:.5;}
   }
-  .show{
-    display:inline-block;
-  }
+
 </style>
 </head>
 <body>
 
-<div class="envelope" id="env">
-  <div class="wax-seal">S</div>
-  <div class="message">🌸 Tap to open 🌸</div>
-  <button class="next" id="go">View Invitation</button>
+<div class="container">
+  <div class="envelope" id="envelope"></div>
+  <div class="tap-note">🌸 Tap to open invitation 🌸</div>
 </div>
 
 <script>
-const env = document.getElementById('env');
-const go = document.getElementById('go');
+const env = document.getElementById('envelope');
 
 env.addEventListener('click', ()=>{
-  env.classList.add('opened');
-  setTimeout(()=>go.classList.add('show'),800);
-});
-
-go.addEventListener('click', ()=>{
-  window.location.href = "open.html";
+  env.classList.add('lift');
+  // after 1 second animation, redirect
+  setTimeout(()=>{
+    window.location.href = 'open.html';
+  },1000);
 });
 </script>
 </body>
