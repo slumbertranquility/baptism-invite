@@ -1,254 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baptism of Little Grace Marie Tumulak</title>
-  <style>
-    :root {
-      --baby-blue: #cbe9ff;
-      --soft-pink: #ffeaf4;
-      --ivory: #fffdf9;
-      --lavender: #e8d9ff;
-      --text-dark: #2f2f2f;
-      --accent: #a0d2eb;
-      --max-width: 1200px;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: 'Poppins', Arial, Helvetica, sans-serif;
-      background: var(--ivory);
-      color: var(--text-dark);
-      line-height: 1.7;
-    }
-
-    header {
-      background: linear-gradient(90deg, var(--soft-pink), var(--baby-blue));
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-    }
-
-    nav h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: #444;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-weight: 500;
-      color: #333;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover { color: #6c59a6; }
-
-    .hero {
-      text-align: center;
-      background: linear-gradient(180deg, var(--baby-blue), var(--soft-pink));
-      padding: 5rem 1rem 4rem;
-    }
-
-    .hero h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #4a4a4a;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #555;
-    }
-
-    section {
-      max-width: var(--max-width);
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-
-    .card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      padding: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .card h3 {
-      font-family: 'Playfair Display', serif;
-      color: #55476a;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .about p {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      color: #666;
-      font-size: 1.05rem;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    }
-
-    .ceremony-details {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-      color: #555;
-    }
-
-    .ceremony-details p { margin: 0.5rem 0; }
-
-    .rsvp form {
-      display: flex;
-      flex-direction: column;
-      max-width: 600px;
-      margin: 0 auto;
-      gap: 1rem;
-    }
-
-    input, select, textarea, button {
-      padding: 0.8rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      font-family: inherit;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 5px var(--accent);
-    }
-
-    button {
-      background: var(--soft-pink);
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover { background: var(--baby-blue); }
-
-    footer {
-      background: var(--lavender);
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    @media (max-width: 600px) {
-      .hero h2 { font-size: 2.2rem; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tumulak Family • Grace Marie Baptism Invitation</title>
+<style>
+  :root {
+    --baby-blue:#cae9ff;
+    --soft-pink:#ffe6f2;
+    --ivory:#fffdf9;
+    --lavender:#e8d9ff;
+    --text:#2f2f2f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:var(--ivory);
+    color:var(--text);
+  }
+  .invite-card{
+    max-width:650px;
+    margin:2rem auto;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    overflow:hidden;
+  }
+  .header{
+    text-align:center;
+    background:linear-gradient(180deg,var(--soft-pink) 0%,var(--baby-blue) 100%);
+    padding:3rem 1rem 2rem;
+  }
+  .header h1{
+    font-family:'Playfair Display',serif;
+    font-size:2.3rem;
+    margin-bottom:.5rem;
+  }
+  .header p{font-size:1.1rem;}
+  .photos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:.5rem;
+  }
+  .photos img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+  }
+  .details,.rsvp{
+    padding:2rem;
+    text-align:center;
+  }
+  .details h2{
+    font-family:'Playfair Display',serif;
+    color:#5a4c7d;
+  }
+  form{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    max-width:400px;
+    margin:1.5rem auto 0;
+  }
+  input,select,textarea{
+    padding:.8rem;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-family:inherit;
+  }
+  button{
+    background:var(--soft-pink);
+    border:none;
+    border-radius:8px;
+    padding:.9rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+  }
+  button:hover{background:var(--baby-blue);}
+  footer{
+    background:var(--lavender);
+    padding:1rem;
+    text-align:center;
+    font-size:.9rem;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>Tumulak Family Baptism</h1>
-      <ul>
-        <li><a href="#about">Our Story</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#ceremony">Ceremony</a></li>
-        <li><a href="#rsvp">RSVP</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h2>Celebrating the Baptism of Grace Marie Tumulak</h2>
-    <p>June 1st, 2024 · St. Cecilia’s Parish Hall</p>
-  </section>
+<div class="invite-card">
+  <div class="header">
+    <h1>Grace Marie Tumulak’s Baptism</h1>
+    <p>Sunday · June 1 2024 · St. Cecilia’s Parish Hall</p>
+  </div>
 
-  <section id="about" class="card about">
-    <h3>Our Little Blessing</h3>
-    <p>
-      The <strong>Tumulak family</strong> is delighted to celebrate the baptism of their beloved daughter,
-      <strong>Grace Marie</strong> — a precious gift whose laughter lights up every room.
-      Join us as we welcome her into a new chapter of faith, hope, and love.
-    </p>
-  </section>
+  <div class="photos">
+    <img src="1766409258963.jpg" alt="Grace baptism photo 1">
+    <img src="1766409278120.jpg" alt="Grace baptism photo 2">
+    <img src="1766409280719.jpg" alt="Grace baptism photo 3">
+  </div>
 
-  <section id="gallery" class="card gallery">
-    <h3>Photo Gallery</h3>
-    <div class="gallery-grid">
-      <img src="1766409258963.jpg" alt="Grace baptism photo 1">
-      <img src="1766409278120.jpg" alt="Grace baptism photo 2">
-      <img src="1766409280719.jpg" alt="Grace baptism photo 3">
-    </div>
-  </section>
+  <div class="details">
+    <h2>Join Us in Thanksgiving</h2>
+    <p>With hearts full of joy, the <strong>Tumulak Family</strong> invites you to share this sacred celebration of faith and love.</p>
+    <p><strong>Reception · 12 PM</strong> following the ceremony.<br>Attire · Springtime pastels or formal lightwear.</p>
+  </div>
 
-  <section id="ceremony" class="card ceremony">
-    <h3>Ceremony Details</h3>
-    <div class="ceremony-details">
-      <p><strong>Date:</strong> Sunday, June 1st, 2024</p>
-      <p><strong>Time:</strong> 10:30 AM · Reception at 12:00 PM</p>
-      <p><strong>Venue:</strong> St. Cecilia’s Parish Hall, Brookside Avenue</p>
-      <p><strong>Attire:</strong> Light pastel spring‑time formal</p>
-    </div>
-  </section>
+  <div class="rsvp" id="rsvp">
+    <h2>RSVP</h2>
+    <form action="https://formsubmit.co/igotkurt@gmail.com" method="POST">
+      <!-- FormSubmit options -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New RSVP – Grace Marie Tumulak Baptism">
+      <input type="hidden" name="_template" value="box">
 
-  <section id="rsvp" class="card rsvp">
-    <h3>RSVP</h3>
-    <form>
-      <input type="text" id="name" name="name" placeholder="Your Name" required>
-      <select id="attending" name="attending" required>
-        <option value="">Will you attend?</option>
-        <option value="yes">Yes, with joy!</option>
-        <option value="no">Sorry, unable to attend</option>
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <select name="Attendance" required>
+        <option value="">Will you attend?</option>
+        <option value="Yes – With joy!">Yes – With joy!</option>
+        <option value="Sorry – Unable to attend">Sorry – Unable to attend</option>
       </select>
-      <textarea id="message" name="message" rows="4" placeholder="Leave a message for the Tumulak family..."></textarea>
-      <button type="submit">Send RSVP</button>
-    </form>
-  </section>
+      <textarea name="Message" rows="3" placeholder="Leave a message for the Tumulak Family (optional)"></textarea>
 
-  <footer>
-    <p>With love from the <strong>Tumulak Family</strong> • © 2024 Grace Marie Tumulak Baptism</p>
-  </footer>
+      <button type="submit">Send RSVP</button>
+    </form>
+  </div>
+
+  <footer>With love from the Tumulak Family • © 2024</footer>
+</div>
+
 </body>
 </html>
