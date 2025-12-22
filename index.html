@@ -3,183 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baptism Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <title>The Christening</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@300;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- THEME SETTINGS --- */
+        /* --- RESET & VARIABLES --- */
         :root {
-            --gold: #D4AF37;
-            --cream: #FAF9F6;
-            --text: #4A4A4A;
-            --white: #ffffff;
+            --gold-gradient: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+            --text-dark: #2c2c2c;
+            --bg-color: #f4f7f6;
         }
+
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
             padding: 0;
-            background-color: var(--cream);
-            color: var(--text);
-            font-family: 'Lato', sans-serif;
-            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(#e0e5ec 1px, transparent 1px);
+            background-size: 30px 30px; /* Subtle dot pattern */
+            color: var(--text-dark);
             overflow-x: hidden;
+            text-align: center;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes goldShimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animate {
+            animation: fadeIn 1.5s ease-out forwards;
         }
 
         /* --- TYPOGRAPHY --- */
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem; /* Large elegant text */
-            color: var(--gold);
-            margin: 10px 0;
+        .script-font {
+            font-family: 'Alex Brush', cursive;
+            font-size: 4rem;
+            margin: 0;
             line-height: 1.2;
+            /* Gold Text Effect */
+            background: var(--gold-gradient);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldShimmer 3s linear infinite;
         }
 
         h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #2c2c2c;
-        }
-
-        p {
-            line-height: 1.6;
-            font-size: 1.1rem;
-            margin: 10px 0;
-        }
-
-        /* --- SECTIONS --- */
-        .container {
-            max-width: 600px; /* Looks good on PC and Phone */
-            margin: 0 auto;
-            padding: 20px;
-            background: var(--white);
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
-            min-height: 100vh;
-            border-left: 10px solid var(--gold);
-            border-right: 10px solid var(--gold);
-        }
-
-        /* --- HERO HEADER --- */
-        .header-section {
-            padding: 60px 20px;
-            border-bottom: 1px solid #eee;
+            letter-spacing: 4px;
+            color: #555;
+            margin-top: 50px;
+            position: relative;
+            display: inline-block;
         }
         
-        .sub-text {
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: #d4af37;
+            margin: 10px auto 0;
+        }
+
+        /* --- LAYOUT CONTAINERS --- */
+        .main-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .intro-text {
+            font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 0.8rem;
             color: #888;
+            margin-bottom: 15px;
         }
 
-        /* --- BIBLE VERSE --- */
-        .verse-box {
-            background-color: #fcfcfc;
-            padding: 30px;
-            margin: 20px 0;
-            border-top: 1px solid var(--gold);
-            border-bottom: 1px solid var(--gold);
-            font-style: italic;
-            font-family: 'Playfair Display', serif;
-            color: var(--gold);
+        .date-display {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #666;
+            margin-top: 20px;
+            border-top: 1px solid #d4af37;
+            border-bottom: 1px solid #d4af37;
+            padding: 10px 30px;
         }
 
-        /* --- DETAILS GRID --- */
-        .details-box {
-            background: #fdfdfd;
-            border: 1px dashed #ccc;
+        /* --- CARDS (Glassmorphism) --- */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             padding: 20px;
-            margin: 20px 0;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: var(--glass-border);
+            border-radius: 15px;
+            padding: 40px 20px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .time {
+            font-size: 2.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        /* --- GODPARENTS LIST --- */
+        .list-section {
+            background: white;
+            margin: 40px 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border-radius: 8px;
         }
-        
-        .icon {
-            font-size: 1.5rem;
-            display: block;
-            margin-bottom: 10px;
-        }
 
-        /* --- GODPARENTS --- */
-        .godparents-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .godparents-list li {
-            padding: 8px 0;
-            border-bottom: 1px dotted #eee;
-            font-size: 1.05rem;
-        }
-
-        /* --- BUTTON --- */
-        .rsvp-btn {
-            background-color: var(--gold);
-            color: white;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            display: inline-block;
+        .names-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
             margin-top: 30px;
-            margin-bottom: 50px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            text-align: left;
         }
 
+        .names-grid div {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        /* --- RSVP BUTTON --- */
+        .btn-gold {
+            background: var(--gold-gradient);
+            background-size: 200% auto;
+            color: white;
+            padding: 18px 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 40px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            animation: goldShimmer 3s linear infinite;
+        }
+
+        .btn-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- MOBILE FIXES --- */
+        @media (max-width: 600px) {
+            .script-font { font-size: 3rem; }
+            .hero { min-height: 80vh; }
+            .glass-card { width: 100%; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="main-wrapper">
         
-        <div class="header-section">
-            <p class="sub-text">Join us for the Christening of</p>
-            <h1>Baby Name Here</h1>
-            <p class="sub-text">Sunday • November 20, 2025</p>
-        </div>
+        <section class="hero animate">
+            <p class="intro-text">We invite you to the Christening of</p>
+            
+            <h1 class="script-font">Kiane Nicole</h1>
+            
+            <div class="date-display">
+                November 20, 2026 • Sunday
+            </div>
+            
+            <br>
+            <p style="font-style: italic; color: #777; max-width: 400px; line-height: 1.6;">
+                "Let the children come to me, and do not hinder them, for to such belongs the kingdom of God." 
+                <br>— Luke 18:16
+            </p>
+        </section>
 
-        <div class="verse-box">
-            "Every good and perfect gift is from above, coming down from the Father of the heavenly lights."
-            <br><small>- James 1:17</small>
-        </div>
+        <section class="animate">
+            <h2>The Celebration</h2>
+            
+            <div class="card-container">
+                <div class="glass-card">
+                    <div class="time">10:00 AM</div>
+                    <h3 style="margin: 10px 0; color: #444;">The Ceremony</h3>
+                    <hr style="width: 30px; border: 1px solid #d4af37; margin: 15px auto;">
+                    <p><strong>San Agustin Church</strong></p>
+                    <p style="font-size: 0.9rem; color: #666;">General Luna St, Manila</p>
+                    <a href="https://goo.gl/maps/placeholder" style="color: #d4af37; text-decoration: none; font-size: 0.8rem;">VIEW MAP &rarr;</a>
+                </div>
 
-        <h2>The Celebration</h2>
-        
-        <div class="details-box">
-            <span class="icon">⛪</span>
-            <strong>THE CEREMONY</strong><br>
-            10:00 AM<br>
-            San Agustin Church<br>
-            <small>General Luna St, Manila</small>
-        </div>
+                <div class="glass-card">
+                    <div class="time">12:00 PM</div>
+                    <h3 style="margin: 10px 0; color: #444;">The Reception</h3>
+                    <hr style="width: 30px; border: 1px solid #d4af37; margin: 15px auto;">
+                    <p><strong>The Glass Garden</strong></p>
+                    <p style="font-size: 0.9rem; color: #666;">Pasig City, Metro Manila</p>
+                    <p style="font-size: 0.8rem; color: #999;">Formal Attire Required</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="details-box">
-            <span class="icon">🍽️</span>
-            <strong>THE RECEPTION</strong><br>
-            12:00 PM<br>
-            Barbara's Heritage Restaurant<br>
-            <small>Intramuros, Manila</small>
-        </div>
+        <section class="animate">
+            <h2>Godparents</h2>
+            <div class="list-section">
+                <p style="color: #888; font-size: 0.9rem;">Witnesses to faith and guides for life.</p>
+                
+                <div class="names-grid">
+                    <div>Mr. Juan Dela Cruz</div>
+                    <div>Ms. Maria Clara</div>
+                    <div>Mr. Jose Rizal</div>
+                    <div>Ms. Gabriela Silang</div>
+                    <div>Mr. Andres Bonifacio</div>
+                    <div>Ms. Melchora Aquino</div>
+                    </div>
+            </div>
+        </section>
 
-        <h2>Godparents</h2>
-        <p>Our guiding lights</p>
-        
-        <ul class="godparents-list">
-            <li>Mr. Juan Dela Cruz</li>
-            <li>Ms. Maria Clara</li>
-            <li>Mr. Jose Rizal</li>
-            <li>Ms. Gabriela Silang</li>
-            <li>(Add more names here)</li>
-        </ul>
-
-        <h2>RSVP</h2>
-        <p>Please confirm before October 20th.</p>
-        
-        <a href="https://m.me/your.username" class="rsvp-btn">Confirm Attendance</a>
+        <section class="animate" style="margin-top: 60px;">
+            <h2>RSVP</h2>
+            <p>We have reserved a seat for you.</p>
+            <p style="color: #888; font-size: 0.9rem;">Please confirm before October 20th.</p>
+            
+            <a href="https://m.me/your.username" class="btn-gold">Confirm Attendance</a>
+            
+            <br><br><br>
+            <p style="font-size: 0.7rem; color: #ccc;">&copy; 2026 Kiane Nicole Baptism</p>
+        </section>
 
     </div>
 
 </body>
 </html>
+
